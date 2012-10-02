@@ -28,18 +28,6 @@ module.exports = function (grunt) {
       b.addEntry(filepath);
     });
 
-    var files = grunt.file.expandFiles(this.data.prepend || []);
-    var src = grunt.helper('concat', files, {
-      separator: ''
-    });
-    b.prepend(src);
-
-    files = grunt.file.expandFiles(this.data.append || []);
-    src = grunt.helper('concat', files, {
-      separator: ''
-    });
-    b.append(src);
-
     if (this.data.hook) {
       this.data.hook.call(this, b);
     }
